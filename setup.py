@@ -38,7 +38,7 @@ def get_install_requires() -> List[str]:
         "numpy",
         "packaging>=20.0",
         # TODO(kstoneriv3): remove this after deprecation of Python 3.6
-        "scipy!=1.4.0" if sys.version[:3] == "3.6" else "scipy>=1.7.0",
+        "scipy!=1.4.0" if sys.version[:3] == "3.6" else "scipy==1.7.0" if sys.version[:3] == "3.7" else "scipy>=1.7.0",
         "sqlalchemy>=1.3.0",
         "tqdm",
         "PyYAML",  # Only used in `optuna/cli.py`.
